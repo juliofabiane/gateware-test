@@ -1,0 +1,18 @@
+.cart.table-wrapper th.col.qty,
+.cart.table-wrapper td.col.qty{
+    text-align: center;
+    min-width: 150px;
+}
+
+.cart.table-wrapper .col.qty .control.qty{
+    margin-top: -7px;
+}
+
+.cart.table-wrapper .col.qty button.qty-change{
+    height: 36px;
+    margin-top: -3px;
+}
+
+.cart.table-wrapper .col.qty .input-text{
+    margin-top: 0;
+}
