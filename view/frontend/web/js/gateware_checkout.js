@@ -9,13 +9,13 @@ define([
             this._super();
         },
         decreaseQty: function(data, event) {
-            const input = $(event.target.offsetParent).find('input')[0]
+            const input = $(event.target.offsetParent).find('input.qty')[0]
             if(input.value > 1){
                 input.valueAsNumber -= 1
             }
         },
         increaseQty: function(data, event) {
-            const input = $(event.target.offsetParent).find('input')[0]
+            const input = $(event.target.offsetParent).find('input.qty')[0]
             input.valueAsNumber += 1
         },
         onChangeQty: function(data, event) {
