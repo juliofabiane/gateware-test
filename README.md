@@ -13,6 +13,6 @@ composer config repositories.gateware/checkout vcs https://github.com/juliofabia
 
 composer require gateware/checkout:dev-master
 
-bin/magento setup:upgrade
+php bin/magento setup:upgrade
 ```
 
