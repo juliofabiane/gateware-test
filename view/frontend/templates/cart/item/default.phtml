@@ -102,7 +102,8 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                     <input id="cart-<?= $block->escapeHtmlAttr($_item->getId()) ?>-qty"
                            name="cart[<?= $block->escapeHtmlAttr($_item->getId()) ?>][qty]"
                            data-cart-item-id="<?= $block->escapeHtmlAttr($_item->getSku()) ?>"
-                           data-bind="event:{change: onChangeQty}, value: qty(), valueUpdate: 'afterkeydown'"
+                           data-bind="event:{change: onChangeQty}"
+                           value="<?= $block->escapeHtmlAttr($block->getQty()) ?>"
                            type="number"
                            size="4"
                            step="any"
@@ -118,8 +119,7 @@ $canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinima
                         "Magento_Ui/js/core/app": {
                             "components": {
                                 "qty_change": {
-                                    "component": "Gateware_Checkout/js/gateware_checkout",
-                                    "currentQty": <?= $block->escapeHtmlAttr($block->getQty()) ?>
+                                    "component": "Gateware_Checkout/js/gateware_checkout"
                                 }
                             }
                         }

@@ -1,27 +1,27 @@
 define([
+    'jquery',
     'ko',
     'uiComponent'
-], function (ko, Component) {
+], function ($, ko, Component) {
     'use strict';
     return Component.extend({
         initialize: function () {
             this._super();
-            this.qty = ko.observable(this.currentQty);
         },
-        decreaseQty: function() {
-            if(this.currentQty > 1){
-                this.qty(this.currentQty -= 1);
+        decreaseQty: function(data, event) {
+            const input = $(event.target.offsetParent).find('input')[0]
+            if(input.value > 1){
+                input.valueAsNumber -= 1
             }
         },
-        increaseQty: function() {
-            this.qty(this.currentQty += 1);
+        increaseQty: function(data, event) {
+            const input = $(event.target.offsetParent).find('input')[0]
+            input.valueAsNumber += 1
         },
         onChangeQty: function(data, event) {
             let newQty = event.target.valueAsNumber;
-            if(newQty && newQty > 0){
-                this.currentQty = newQty
-            }else{
-                event.target.value = this.currentQty
+            if(!newQty || newQty <= 0){
+                event.target.value = 1
             }
         }
     });
